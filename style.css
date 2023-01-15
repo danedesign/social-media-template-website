@@ -1,1 +1,251 @@
+* {
+    margin: 0;
+}
 
+body {
+    font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: sticky;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background: rgb(240, 240, 240);
+    z-index: 1;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header li {
+    display: inline;
+    color: rgb(43, 118, 231);
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: none;
+    transition: 200ms;
+}
+
+
+header li:hover {
+    background: rgb(212, 212, 212);
+}
+
+.header-icon {
+    color: rgb(43, 118, 231);
+    transform: scale(1.5);
+}
+
+.header-input {
+    background: rgb(212, 212, 212);
+    border: none;
+    border-radius: 5px;
+    width: 20vw;
+    height: 30px;
+    padding: 10px;
+    opacity: 0.7;
+    transition: 200ms;
+}
+
+.header-input:hover {
+    opacity: 1;
+}
+
+.header-profile-img {
+    object-fit: cover;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+}
+
+.header-profile-dropmenu {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    text-align: right;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.171));
+}
+
+.header-profile-dropmenu li {
+    display: block;
+}
+
+#viewport {
+    padding: 50px 20vw;
+}
+
+#viewport-bio {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 100px;
+    margin-bottom: 30px;
+}
+
+.bio-profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bio-profile-text button {
+    background: rgb(43, 118, 231);
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(43, 118, 231);
+    transition: 200ms;
+}
+
+.bio-profile-text button:hover {
+    background: rgb(44, 104, 196);
+    border: 2px solid rgb(22, 54, 102);
+}
+
+/* .bio-profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} */
+
+.bio-profile-name h1 {
+    font-size: 40px;
+}
+
+.bio-profile-name h5 {
+    margin-block-end: 10px;
+    opacity: 0.6;
+}
+
+.bio-profile-detail a {
+    color: rgb(43, 118, 231);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bio-profile-detail p {
+    opacity: 0.6;
+}
+
+.bio-profile-detail a:hover {
+    color: rgb(44, 104, 196);
+}
+
+.bio-profile-img {
+    width: 200px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    clip-path: circle();
+    filter: drop-shadow(0px 10px 10px #000);
+}
+
+#viewport-story {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.story-item {
+    display: block;
+    text-align: center;
+    width: 70px;
+    padding: 20px 0;
+}
+
+.story-thumbnail {
+    width: 60px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    clip-path: circle();
+    margin-bottom: 10px;
+}
+
+#viewport-posts {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+}
+
+.posts-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    padding: 10px 0;
+    border-top: rgba(0, 0, 0, 0.205) 1px solid;
+    position: sticky;
+    top: 50px;
+    background: rgba(255, 255, 255, 0.726);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1;
+}
+
+.posts-tab a {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.posts-tab a:hover {
+    color: #000;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.452);
+}
+
+.posts-img a {
+    position: relative;
+    width: 19.6vw;
+}
+
+.posts-img {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 1vh; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19.6vw, 1fr));
+    column-gap: max-content;
+    column-gap: 0.1vw;
+    row-gap: 0.2vh;
+    margin: auto;
+}
+
+.posts-img img {
+    width: 19.6vw;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.posts-img-hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000073;
+    opacity: 0;
+    transition: 0.2s;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.posts-img-hover:hover {
+    opacity: 1;
+}
