@@ -6,9 +6,17 @@ body {
     font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
 }
 
+.mediascreen-mobile {
+    display: none;
+}
+
+.mediascreen-desktop {
+    display: inherit;
+}
+
 header {
     position: sticky;
-    top:0;
+    top: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -169,61 +177,57 @@ header li:hover {
     margin-bottom: 10px;
 }
 
-#viewport-posts {
-    /* display: flex;
-    justify-content: center;
-    flex-direction: column; */
-}
-
 .posts-tab {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 100px;
-    padding: 10px 0;
     border-top: rgba(0, 0, 0, 0.205) 1px solid;
     position: sticky;
     top: 50px;
     background: rgba(255, 255, 255, 0.726);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    align-items: center;
     z-index: 1;
+    height: 60px;
+    box-sizing: border-box;
 }
 
 .posts-tab a {
     color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     transition: 200ms;
+    border-radius: 5px;
 }
 
 .posts-tab a:hover {
     color: #000;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.452);
+    background: rgba(0, 0, 0, 0.205);
 }
 
 .posts-img a {
     position: relative;
-    width: 19.6vw;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .posts-img {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 1vh; */
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(19.6vw, 1fr));
-    column-gap: max-content;
-    column-gap: 0.1vw;
-    row-gap: 0.2vh;
-    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 10px;
 }
 
 .posts-img img {
-    width: 19.6vw;
+    width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    place-self: center;
 }
 
 .posts-img-hover {
@@ -248,4 +252,63 @@ header li:hover {
 
 .posts-img-hover:hover {
     opacity: 1;
+}
+
+@media screen and (max-width: 926px) {
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        width: 100vw;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        position: fixed;
+        top: inherit;
+        bottom: 0;
+    }
+
+    #viewport {
+        padding: 0;
+    }
+
+    .mediascreen-mobile {
+        display: inherit;
+    }
+
+    .mediascreen-desktop {
+        display: none;
+    }
+
+    .padding-mobile {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #viewport-bio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #viewport-story {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        margin-bottom: 10px;
+    }    
+
+    .posts-tab {
+        gap: 0px;
+        top: 0px;
+    }    
 }
